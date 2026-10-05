@@ -8,16 +8,8 @@
     <title>Oficina</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        .navbar-dark .navbar-menu-link {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            transition: padding 0.5s ease-in-out;
-        }
-
-        .navbar-dark .navbar-menu-link:hover {
-            padding: 0.5rem 0.75rem;
-        }
     </style>
 </head>
 
@@ -25,12 +17,16 @@
     <header>
         @include('layout.top_bar')
     </header>
-    <main>
+    <main class="mt-5 justify-content-center">
         <div class="bg-secondary">
             @yield('content')
         </div>
     </main>
-    <footer></footer>
+    <footer class="bg-black text-white p-2 fixed-bottom">
+        <div class="container">
+            <p class="text-center">&copy; 2023 Oficina. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

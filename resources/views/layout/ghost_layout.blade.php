@@ -11,7 +11,7 @@
     <title>Oficina</title>
 </head>
 
-<body class="bg-secondary min-vh-100">
+<body class="bg-secondary min-vh-100 d-flex flex-column">
     <header class="p-2 bg-black text-white">
         <div class="d-flex justify-content-center bg-black">
             <h1 class="text-center  ">
@@ -19,12 +19,12 @@
             </h1>
         </div>
     </header>
-    <main class="mt-5 justify-content-center">
+    <main class="mt-5 justify-content-center flex-grow-1">
         <div>
             @yield('content')
         </div>
     </main>
-    <footer class="bg-black text-white p-2 fixed-bottom">
+    <footer class="bg-black text-white p-2 mt-auto">
         <div class="container">
             <p class="text-center">&copy; 2023 Oficina. Todos os direitos reservados.</p>
         </div>

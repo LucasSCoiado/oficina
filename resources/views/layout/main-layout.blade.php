@@ -13,16 +13,16 @@
     </style>
 </head>
 
-<body class="bg-secondary min-vh-100">
+<body class="bg-secondary min-vh-100 d-flex flex-column">
     <header>
         @include('layout.top_bar')
     </header>
-    <main class="mt-5 justify-content-center">
+    <main class="mt-5 justify-content-center flex-grow-1">
         <div class="bg-secondary">
             @yield('content')
         </div>
     </main>
-    <footer class="bg-black text-white p-2 fixed-bottom">
+    <footer class="bg-black text-white p-2 mt-auto">
         <div class="container">
             <p class="text-center">&copy; 2023 Oficina. Todos os direitos reservados.</p>
         </div>

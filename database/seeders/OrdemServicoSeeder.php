@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class OrdemServicoSeeder extends Seeder
@@ -21,6 +22,11 @@ class OrdemServicoSeeder extends Seeder
                 'data_abertura' => '2026-10-01',
                 'status' => 'Concluída',
                 'valor_total' => 350.00,
+                'descricoes' => [
+                    'Troca de óleo e filtros',
+                    'Revisão preventiva do motor',
+                    'Substituição das pastilhas de freio',
+                ],
             ],
             [
                 'numero' => 1002,
@@ -30,6 +36,11 @@ class OrdemServicoSeeder extends Seeder
                 'data_abertura' => '2026-10-02',
                 'status' => 'Em andamento',
                 'valor_total' => 780.50,
+                'descricoes' => [
+                    'Diagnóstico do sistema elétrico',
+                    'Reparo da suspensão dianteira',
+                    'Revisão do sistema de arrefecimento',
+                ],
             ],
             [
                 'numero' => 1003,
@@ -39,6 +50,11 @@ class OrdemServicoSeeder extends Seeder
                 'data_abertura' => '2026-10-03',
                 'status' => 'Aberta',
                 'valor_total' => 0.00,
+                'descricoes' => [
+                    'Avaliação geral do veículo',
+                    'Verificação de ruído no motor',
+                    'Inspeção do sistema de freios',
+                ],
             ],
         ];
 
@@ -66,6 +82,7 @@ class OrdemServicoSeeder extends Seeder
                     'data_abertura' => $ordem['data_abertura'],
                     'status' => $ordem['status'],
                     'valor_total' => $ordem['valor_total'],
+                    'descricao' => Arr::random($ordem['descricoes']),
                 ]
             );
         }

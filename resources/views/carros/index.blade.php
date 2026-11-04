@@ -6,7 +6,7 @@
         <hr>
         {{-- Botão adicionar carro --}}
         <div class="text-end mb-4">
-            <a href="#" class="btn btn-primary">Adicionar Carro</a>
+            <a href="{{ route('carros.create') }}" class="btn btn-primary">Adicionar Carro</a>
         </div>
         <hr>
         {{-- lista de carros --}}
@@ -21,16 +21,23 @@
                                     <h5 class="mb-0">
                                         <a class="text-decoration-none text-white"
                                             href="{{ route('carros.carro', ['id' => $carro->id]) }}">
-                                            {{ $carro->marca }} {{ $carro->modelo }}
+                                            {{ $carro->marca ?? 'Marca não informada' }} {{ $carro->modelo }}
                                         </a>
                                     </h5>
                                 </div>
-                                <p class="mb-0 text-light-emphasis">{{ $carro->descricao }}</p>
+                                <p class="mb-0 text-light-emphasis">{{ $carro->descricao ?? 'Descrição não informada' }}</p>
                             </div>
 
                             <div class="d-flex gap-2 flex-wrap">
-                                <a href="#" class="btn btn-sm btn-outline-light">Editar</a>
-                                <a href="#" class="btn btn-sm btn-outline-danger">Remover</a>
+                                <a href="{{ route('carros.edit', ['id' => $carro->id]) }}"
+                                    class="btn btn-sm btn-outline-light">Editar</a>
+
+                                <form action="{{ route('carros.destroy', ['id' => $carro->id]) }}" method="POST"
+                                    onsubmit="return confirm('Deseja realmente remover este carro?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Remover</button>
+                                </form>
                             </div>
                         </div>
                     </li>
